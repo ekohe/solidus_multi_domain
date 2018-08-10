@@ -12,7 +12,8 @@ module SpreeMultiDomain::LineItemConcerns
     private
 
     def ensure_product_belongs_to_store
-      raise ProductDoesNotBelongToStoreError if order.store.present? && !product.stores.include?(order.store)
+      # commenting out because using same cart across all stores
+      # raise ProductDoesNotBelongToStoreError if order.store.present? && !product.stores.include?(order.store)
     end
   end
 end
